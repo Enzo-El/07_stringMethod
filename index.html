@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <!---Student Name: Lorenzo Laurel Reyes--->
+    <!---Class Batch: WD92P (ZetoRo)---------->
+    <!---Schedule: 7:00pm to 10:00pm---------->
+    <!---Instructor: Ma'am Jamie Delina------->
+    <!---Coordinator: Sir Ben De Leon--------->
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+        <title>The String Methods</title>
+    
+        <style>
+            body {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+                margin: 0;
+            }
+
+            .container {
+                text-align: center;
+            }
+            
+            input {
+                padding: 8px;
+                margin-right: 8px;
+            }
+            
+            button {
+                padding: 8px;
+                cursor: pointer;
+            }
+            
+            #results {
+                margin-top: 20px;
+                text-align: left;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <div class="container">
+            <label for="userInput">Kindly Enter a 5-Letter Word:</label>
+            <input type="text" id="userInput" required />
+            <button onclick="stringMethods()">Show Results</button>
+
+            <br /><br />
+
+            <div id="results"></div>
+
+            <br /><br />
+
+            <button onclick="reset()">Reset</button>
+        </div>
+    
+        <section>
+        <script>
+            function stringMethods() {
+                var userInput = document.getElementById('userInput').value;
+                var results = document.getElementById('results');
+        
+                //  This clears the previous results.
+                results.innerHTML = '';
+
+                //  This demonstrate the "charAt()" string method which returns the third character/index (represented by 2) of the word.
+                results.innerHTML += '<strong>The third (3rd) character is:</strong> ' + userInput.charAt(2) + '<br>';
+
+                //  This demonstrate the "charCodeAt()" string method which returns the ASCII value of the third character/index of the word.
+                results.innerHTML += '<strong>The ASCII value of the third (3rd) character is:</strong> ' + userInput.charCodeAt(2) + '<br>';
+
+                //  This demonstrate the "concat()" string method which returns the combined/concatenated value of the words.
+                results.innerHTML += '<strong>Word plus World is:</strong> ' + userInput.concat(' World') + '<br>';
+
+                //  This demonstrate the "includes()" string method which returns "true" value if the user input consists/includes "abc", otherwise returns "false".
+                results.innerHTML += '<strong>Does the word includes, ("abc"):</strong> ' + userInput.includes('abc') + '<br>';
+
+                //  This demonstrate the "endsWith()" string method which returns "true" value if the user input ends at "def", otherwise returns "false".
+                results.innerHTML += '<strong>Does the word ends with, ("def"):</strong> ' + userInput.endsWith('def') + '<br>';
+
+                //  This demonstrate the "slice()" string method which returns the sliced word starting from the second index (1) to the fifth index (4) of the word.
+                results.innerHTML += '<strong>The sliced word is:</strong> ' + userInput.slice(1, 4) + '<br>';
+                
+                //  This demonstrate the "startsWith()" string method which returns "true" if the word starts with "ab", otherwise returns "false".
+                results.innerHTML += '<strong>Does the word starts with, ("ab"):</strong> ' + userInput.startsWith('ab') + '<br>';
+                
+                //  This demonstrate the "toLowerCase()" string method which returns the all-lowercase version of the word.
+                results.innerHTML += '<strong>The all-lowercase version is:</strong> ' + userInput.toLowerCase() + '<br>';
+                
+                //  This demonstrate the "toUpperCase()" string method which returns the all-uppercase version of the word.
+                results.innerHTML += '<strong>The ALL-UPPERCASE version is:</strong> ' + userInput.toUpperCase() + '<br>';
+                }
+
+            function reset() {
+                document.getElementById('userInput').value = '';
+                document.getElementById('results').innerHTML = '';
+            }
+        </script>
+        
+    </body>
+</html>
